@@ -1,1 +1,13 @@
 # Add any directories, files, or patterns you don't want to be tracked by version control
+.tmp
+.DS_Store
+.DS_Store?
+.dpl/
+vscode
+node_modules
+typings
+app/**/*.js
+app/**/*.map
+npm-debug.log
+npm-debug.log
+data.db
