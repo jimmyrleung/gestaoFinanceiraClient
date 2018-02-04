@@ -11,3 +11,4 @@ app/**/*.map
 npm-debug.log
 npm-debug.log
 data.db
+src/assets/semantic/
