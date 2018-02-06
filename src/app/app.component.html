@@ -1,21 +1,12 @@
 <div class="ui grid container" style="margin: 5px;">
   <div class="row">
     <div class="four wide column">
-      <div class="ui fluid search selection normal dropdown">
-        <input type="hidden" name="country">
-        <i class="dropdown icon"></i>
-        <div class="default text">Selecione um plano financeiro</div>
-        <div class="menu">
-          <div class="item" data-value="plLevel">Plano Level</div>
-          <div class="item" data-value="pl7comm">Plano 7COMm</div>
-          <div class="item" data-value="plIntelity">Plano Intelity</div>
-        </div>
-      </div>
+      <PlanoFinanceiroBox></PlanoFinanceiroBox>
     </div>
   </div>
   <div class="row">
-    <div class="twelve wide column">
-
+    <div class="sixteen wide column">
+      <Extrato title="Extrato"></Extrato>
     </div>
   </div>
 </div>

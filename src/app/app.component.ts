@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { AfterViewInit, OnInit } from "@angular/core";
 //import * as $ from 'jquery';
-declare var jQuery: any; // It is imported globally on angular-cli.json, so we just need to declare it.
 
 @Component({
   selector: 'app-root',
@@ -9,19 +8,23 @@ declare var jQuery: any; // It is imported globally on angular-cli.json, so we j
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit, OnInit {
-  title = 'app';
-  selectedvalue;
-
   ngOnInit() {
 
   }
 
   ngAfterViewInit() {
-    jQuery('.ui.dropdown').dropdown({
-      onChange: function (value, text, $selectedItem) {
-        this.selectedvalue = value;
-        console.log(this.selectedvalue);
-      }
-    });
+    // jQuery('.ui.dropdown').dropdown({
+    //   onChange: function (value, text, $selectedItem) {
+    //     console.log(value);
+    //     if (value === 3) {
+    //       this.noDataMessage = '';
+    //       this.listagem = this.extratoIntelity;
+    //     }
+    //     else {
+    //       this.listagem = [];
+    //       this.noDataMessage = "Parece que este plano financeiro ainda não possui nenhum registro."
+    //     }
+    //   }
+    // });
   }
 }

@@ -1,0 +1,9 @@
+<div class="ui fluid search selection normal dropdown">
+    <input type="hidden" name="country">
+    <i class="dropdown icon"></i>
+    <div class="default text">Selecione um plano financeiro</div>
+    <div class="menu">
+        <!-- Como o data-value é um custom attribute, precisamos utilizar o 'attr. -->
+        <div *ngFor="let plano of listaPlanos" class="item" [attr.data-value]="plano.id">{{plano.nome}}</div>
+    </div>
+</div>
