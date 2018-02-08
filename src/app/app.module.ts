@@ -5,14 +5,15 @@ import { TransacaoModule } from './transacao/transacao.module';
 import { PlanoFinanceiroModule } from './planoFinanceiro/planofinanceiro.module';
 import { HttpModule } from '@angular/http'; // Injeção do Http na nossa aplicação
 import 'rxjs/add/operator/map'; // Map para ObservableResponse
-//import { CommonModule } from '@angular/common';
+import { routing } from './app.route';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent, HomeComponent
   ],
   imports: [
-    BrowserModule, TransacaoModule, HttpModule, PlanoFinanceiroModule
+    BrowserModule, TransacaoModule, HttpModule, PlanoFinanceiroModule, routing
   ],
   providers: [],
   bootstrap: [AppComponent]

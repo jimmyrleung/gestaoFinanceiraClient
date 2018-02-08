@@ -3,19 +3,21 @@
     <div class="two wide column">
       <div class="ui vertical text menu">
         <div class="header item">Menu</div>
-        <a class="active item">
+        <a [routerLink]="['']" class="active item">
           Home
         </a>
         <a class="item">
           Planos Financeiros
         </a>
-        <a class="item">
+        <a class="item" [routerLink]="['/extrato']">
           Extrato
         </a>
       </div>
     </div>
     <div class="twelve wide column">
-      <div class="ui grid" style="margin-bottom: 5px;">
+      <router-outlet></router-outlet>
+      <!-- Router -->
+      <!-- <div class="ui grid" style="margin-bottom: 5px;">
         <div class="row">
           <div class="five wide column">
             <PlanoFinanceiro></PlanoFinanceiro>
@@ -26,7 +28,7 @@
             <Transacoes title="Extrato de Transações"></Transacoes>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
