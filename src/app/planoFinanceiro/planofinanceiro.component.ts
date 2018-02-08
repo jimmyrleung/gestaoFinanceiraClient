@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
-import { DropDownItem } from './DropDownItem';
+import { DropDownItem } from '../shared/DropDownItem';
 declare var jQuery: any; // It is imported globally on angular-cli.json, so we just need to declare it.
 
 @Component({
-    selector: 'PlanoFinanceiroBox',
-    templateUrl: './planofinanceirobox.component.html'
+    selector: 'PlanoFinanceiro',
+    templateUrl: './planofinanceiro.component.html'
 })
-export class PlanoFinanceiroBoxComponent {
+export class PlanoFinanceiroComponent {
 
     dropdownItemList: DropDownItem[] = []; // Também poderia ser listaPlanos: Array<Object> = []; 
 

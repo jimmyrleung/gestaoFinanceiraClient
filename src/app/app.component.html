@@ -1,12 +1,32 @@
-<div class="ui grid container" style="margin: 5px;">
+<div class="ui grid" style="margin: 5px;">
   <div class="row">
-    <div class="fourteen wide column">
-      <PlanoFinanceiroBox></PlanoFinanceiroBox>
+    <div class="two wide column">
+      <div class="ui vertical text menu">
+        <div class="header item">Menu</div>
+        <a class="active item">
+          Home
+        </a>
+        <a class="item">
+          Planos Financeiros
+        </a>
+        <a class="item">
+          Extrato
+        </a>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="sixteen wide column">
-      <Extrato title="Extrato"></Extrato>
+    <div class="twelve wide column">
+      <div class="ui grid" style="margin-bottom: 5px;">
+        <div class="row">
+          <div class="five wide column">
+            <PlanoFinanceiro></PlanoFinanceiro>
+          </div>
+        </div>
+        <div class="row">
+          <div class="sixteen wide column">
+            <Transacoes title="Extrato de Transações"></Transacoes>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

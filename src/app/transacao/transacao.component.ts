@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'Extrato',
-    templateUrl: './extrato.component.html'
+    selector: 'Transacoes',
+    templateUrl: './transacao.component.html'
 })
-export class ExtratoComponent {
+export class TransacaoComponent {
     listagem = [
         { dataTransacao: "15/01/2018", descricao: "Recebimento Intelity", valor: 2980.00, tipo: "Recebimento" },
         { dataTransacao: "15/01/2018", descricao: "Pagamento Fatura", valor: 2200.00, tipo: "Despesa" },
