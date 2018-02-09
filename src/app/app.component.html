@@ -6,7 +6,7 @@
         <a [routerLink]="['']" class="active item">
           Home
         </a>
-        <a class="item">
+        <a class="item" [routerLink]="['/plano-financeiro']">
           Planos Financeiros
         </a>
         <a class="item" [routerLink]="['/extrato']">
@@ -14,7 +14,7 @@
         </a>
       </div>
     </div>
-    <div class="twelve wide column">
+    <div class="fourteen wide column">
       <router-outlet></router-outlet>
       <!-- Router -->
       <!-- <div class="ui grid" style="margin-bottom: 5px;">

@@ -25,6 +25,7 @@ export class PlanoFinanceiroComponent {
     }
 
     initDropDown() {
+        //console.log("teste");
         jQuery('.ui.dropdown').dropdown({
             onChange: function (value, text, $selectedItem) {
                 console.log(value);

@@ -1,9 +1,16 @@
-<div class="ui fluid search selection normal dropdown">
-    <input type="hidden" name="planoFinanceiro" value="3">
-    <i class="dropdown icon"></i>
-    <div class="default text">Selecione um plano financeiro</div>
-    <div class="menu">
-        <!-- Como o data-value é um custom attribute, precisamos utilizar o 'attr. -->
-        <!-- <div *ngFor="let plano of listaPlanos" [ngClass]="plano.isDefault ? 'item selected active' : 'item'" [attr.data-value]="plano.id">{{plano.nome}}</div> -->
+<div class="ui container grid">
+    <div class="row">
+        <h1>Planos Financeiros</h1>
+    </div>
+    <div class="row">
+        <div class="ui search selection normal dropdown">
+            <input type="hidden" name="planoFinanceiro">
+            <i class="dropdown icon"></i>
+            <div class="default text">Selecione um plano financeiro</div>
+            <div class="menu">
+                <!-- Como o data-value é um custom attribute, precisamos utilizar o 'attr. -->
+                <!-- <div *ngFor="let plano of listaPlanos" [ngClass]="plano.isDefault ? 'item selected active' : 'item'" [attr.data-value]="plano.id">{{plano.nome}}</div> -->
+            </div>
+        </div>
     </div>
 </div>
