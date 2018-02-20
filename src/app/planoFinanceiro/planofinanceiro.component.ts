@@ -11,6 +11,8 @@ export class PlanoFinanceiroComponent {
 
     dropdownItemList: DropDownItem[] = []; // Também poderia ser listaPlanos: Array<Object> = []; 
 
+    listagem = [];
+
     // Quando o angular ver que nosso Component depende de Http
     // Podemos solicitar uma instância de http ao Constructor
     constructor(http: Http) {
@@ -18,6 +20,8 @@ export class PlanoFinanceiroComponent {
             .map(res => res.json()) // Mapeia nossa responsa em um JSON
             .subscribe(planos => {
                 planos.forEach((p) => {
+                    p.isDefaultStr = p.isDefault ? "Sim" : "Não";
+                    this.listagem.push(p);
                     this.dropdownItemList.push(new DropDownItem(p.nome, p.id, p.isDefault));
                 });
                 this.initDropDown()

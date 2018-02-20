@@ -18,4 +18,22 @@
             </button>
         </a>
     </div>
+    <div class="row">
+        <table class="ui compact table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Plano Padrão?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let plano of listagem">
+                    <td>{{plano.id}}</td>
+                    <td>{{plano.nome}}</td>
+                    <td>{{plano.isDefaultStr}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

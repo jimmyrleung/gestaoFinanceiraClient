@@ -2,19 +2,41 @@
     <div class="row">
         <h1>Cadastrar Plano Financeiro</h1>
     </div>
+    <div class="row" *ngIf="errorMessage">
+        <div class="ui error message" style="width: 100%;">
+            <i class="close icon" (click)="closeErrorMessage()"></i>
+            <div class="header">
+                Erro
+            </div>
+            {{errorMessage}}
+        </div>
+    </div>
+    <div class="row" *ngIf="successMessage">
+        <div class="ui success green message" style="width: 100%;">
+            <i class="close icon" (click)="closeSuccessMessage()"></i>
+            <div class="header">
+                Sucesso
+            </div>
+            {{successMessage}}
+        </div>
+    </div>
     <div class="row">
         <div class="ui form fluid">
             <div class="field">
                 <label>Nome</label>
-                <input placeholder="Nome" type="text">
-            </div>
-            <div class="inline field">
-                <div class="ui checkbox">
-                    <input type="checkbox">
-                    <label>Definir como padrão?</label>
+                <input placeholder="Nome" name="nome" type="text" [(ngModel)]="planoFinanceiro.nome">
+                <div class="ui checkbox pointer" style="margin-top: 5px;">
+                    <input type="checkbox" autocomplete="off" id="cbIsDefault" name="cbIsDefault" [(ngModel)]="planoFinanceiro.isDefault">
+                    <label for="cbIsDefault">Definir como padrão?</label>
                 </div>
             </div>
-            <div class="ui submit button">Cadastrar</div>
+            <a [routerLink]="['/plano-financeiro']">
+                <button class="ui left labeled icon button">
+                    <i class="left arrow icon"></i>
+                    Voltar
+                </button>
+            </a>
+            <button class="ui blue submit button" (click)="cadastrar()">Cadastrar</button>
         </div>
     </div>
 </div>
