@@ -13,7 +13,8 @@
     </div>
     <div class="row">
         <div class="ui left icon input">
-            <input type="text" placeholder="Pesquisar">
+            <!-- O angular só redesenha a tela por eventos assíncronos, por isso utilizamos o keyup -->
+            <input #descricaoProcurada (keyup)="0" type="text" placeholder="Filtrar descrição">
             <i class="search icon"></i>
         </div>
         <table class="ui compact table">
@@ -27,7 +28,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let transacao of listagem" [ngClass]="transacao.tipo === 'Recebimento' ? 'positive' : 'negative'">
+                <tr *ngFor="let transacao of listagem | filtroPorDescricao: descricaoProcurada.value" [ngClass]="transacao.tipo === 'Recebimento' ? 'positive' : 'negative'">
                     <td>
                         <i [ngClass]="transacao.tipo === 'Recebimento' ? 'icon checkmark' : 'icon close'"></i>
                     </td>

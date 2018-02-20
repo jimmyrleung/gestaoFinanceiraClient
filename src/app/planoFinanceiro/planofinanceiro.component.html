@@ -12,5 +12,10 @@
                 <!-- <div *ngFor="let plano of listaPlanos" [ngClass]="plano.isDefault ? 'item selected active' : 'item'" [attr.data-value]="plano.id">{{plano.nome}}</div> -->
             </div>
         </div>
+        <a [routerLink]="['/cadastrar-plano-financeiro']">
+            <button class="ui icon button" style="margin-left: 5px;">
+                <i class="plus icon"></i>
+            </button>
+        </a>
     </div>
 </div>
