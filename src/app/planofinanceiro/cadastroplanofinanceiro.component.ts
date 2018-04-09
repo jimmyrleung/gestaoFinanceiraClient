@@ -18,7 +18,6 @@ export class CadastroPlanoFinanceiroComponent {
     }
 
     cadastrar() {
-        // console.log(this.planoFinanceiro);
         let headers = new Headers();
         headers.append("Content-type", "application/json");
 

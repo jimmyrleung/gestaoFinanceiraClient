@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Http } from '@angular/http';
 import { DropDownItem } from '../shared/DropDownItem';
+import { PlanoFinanceiro } from './PlanoFinanceiro';
+import { PlanoFinanceiroService } from './planofinanceiro.service';
 declare var jQuery: any; // It is imported globally on angular-cli.json, so we just need to declare it.
 
 @Component({
@@ -10,26 +12,26 @@ declare var jQuery: any; // It is imported globally on angular-cli.json, so we j
 export class PlanoFinanceiroComponent {
 
     dropdownItemList: DropDownItem[] = []; // Também poderia ser listaPlanos: Array<Object> = []; 
-
-    listagem = [];
+    planoFinanceiroService: PlanoFinanceiroService;
+    listagem: Array<PlanoFinanceiro> = [];
 
     // Quando o angular ver que nosso Component depende de Http
     // Podemos solicitar uma instância de http ao Constructor
-    constructor(http: Http) {
-        http.get('http://localhost:3001/planosFinanceiros')
-            .map(res => res.json()) // Mapeia nossa responsa em um JSON
-            .subscribe(planos => {
+    constructor(service: PlanoFinanceiroService) {
+        this.planoFinanceiroService = service;
+
+        this.planoFinanceiroService.getPlanosFinanceiros()
+            .then(planos => {
+                this.listagem = planos;
+
                 planos.forEach((p) => {
-                    p.isDefaultStr = p.isDefault ? "Sim" : "Não";
-                    this.listagem.push(p);
                     this.dropdownItemList.push(new DropDownItem(p.nome, p.id, p.isDefault));
                 });
-                this.initDropDown()
+                this.initDropDown();
             });
     }
 
     initDropDown() {
-        //console.log("teste");
         jQuery('.ui.dropdown').dropdown({
             onChange: function (value, text, $selectedItem) {
                 console.log(value);
